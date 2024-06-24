@@ -1,4 +1,4 @@
-FROM rabbitmq:3-management
+FROM rabbitmq:management
 
 COPY .erlang.cookie /var/lib/rabbitmq/.erlang.cookie
 COPY cluster-entrypoint.sh /usr/local/bin/cluster-entrypoint.sh
