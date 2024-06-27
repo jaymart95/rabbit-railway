@@ -20,3 +20,4 @@ ENV RABBITMQ_DEFAULT_VHOST=${RABBITMQ_DEFAULT_VHOST}
 RUN chmod 755 /usr/local/bin/cluster-entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/cluster-entrypoint.sh"]
+CMD ["rabbitmq-server"]
