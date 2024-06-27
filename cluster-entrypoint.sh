@@ -6,7 +6,7 @@ set -e
 chmod 400 /var/lib/rabbitmq/.erlang.cookie
 
 # Get hostname from environment variable
-HOSTNAME=$(RAILWAY_PRIVATE_DOMAIN)
+HOSTNAME=$(cluster2)
 echo "Starting RabbitMQ Server For host: " $HOSTNAME
 
 if [ -z "$JOIN_CLUSTER_HOST" ]; then
