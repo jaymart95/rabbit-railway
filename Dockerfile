@@ -3,6 +3,7 @@ FROM rabbitmq:management-alpine
 COPY .erlang.cookie /usr/var/lib/rabbitmq/.erlang.cookie
 COPY cluster-entrypoint.sh /usr/local/bin/cluster-entrypoint.sh
 COPY src/rabbitmq/plugins /plugins/
+COPY rabbitmq1.conf /etc/rabbitmq/rabbitmq.conf
 
 RUN set -eux; \
     rabbitmq-plugins enable --offline rabbitmq_management rabbitmq_message_deduplication; \
