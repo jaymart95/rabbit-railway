@@ -18,7 +18,5 @@ ENV RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
 
 RUN chmod 755 /usr/local/bin/cluster-entrypoint.sh
 
-RUN echo "127.0.0.1 rabbitmq1.railway.internal" >> /etc/hosts
-
 ENTRYPOINT ["/usr/local/bin/cluster-entrypoint.sh"]
 CMD ["rabbitmq-server"]
