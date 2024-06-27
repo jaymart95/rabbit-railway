@@ -13,4 +13,3 @@ RUN chmod 755 /usr/local/bin/cluster-entrypoint.sh && \
     rabbitmq-plugins enable --offline rabbitmq_deduplication
 
 ENTRYPOINT ["/usr/local/bin/cluster-entrypoint.sh"]
-CMD ["rabbitmq-server"]
