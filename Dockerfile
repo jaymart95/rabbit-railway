@@ -2,7 +2,7 @@ FROM rabbitmq:management
 
 COPY .erlang.cookie /var/lib/rabbitmq/.erlang.cookie
 COPY cluster-entrypoint.sh /usr/local/bin/cluster-entrypoint.sh
-COPY src/rabbitmq/plugins plugins
+COPY src/rabbitmq/plugins/rabbitmq_deduplication-*.ez /usr/lib/rabbitmq/plugins/
 
 ENV RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
 ENV RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
