@@ -13,10 +13,6 @@ RUN set -eux; \
     apk add --no-cache python3; \
     rabbitmqadmin --version
 
-ENV RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
-ENV RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
-ENV RABBITMQ_DEFAULT_VHOST=${RABBITMQ_DEFAULT_VHOST}
-
 RUN chmod 755 /usr/local/bin/cluster-entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/cluster-entrypoint.sh"]
