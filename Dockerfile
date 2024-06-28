@@ -15,7 +15,7 @@ RUN set -eux; \
 
 ENV RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
 ENV RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
-ENV RABBITMQ_NODENAME=cluster1@rabbitmq1.railway.internal
+ENV RABBITMQ_NODENAME=rabbitmq-cluster1
 
 RUN chmod 755 /usr/local/bin/cluster-entrypoint.sh
 
