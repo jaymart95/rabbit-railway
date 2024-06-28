@@ -12,11 +12,11 @@ echo "Starting RabbitMQ Server for host: $HOSTNAME"
 if [ -z "$JOIN_CLUSTER_HOST" ]; then
     /usr/local/bin/docker-entrypoint.sh rabbitmq-server &
     sleep 30
-    rabbitmqctl wait --timeout 60000 /usr/var/lib/rabbitmq/mnesia/rabbit@$HOSTNAME.pid
+    rabbitmqctl wait --timeout 60000 /usr/var/lib/rabbitmq/mnesia/rabbitmq2@$HOSTNAME.pid
 else
     /usr/local/bin/docker-entrypoint.sh rabbitmq-server -detached
     sleep 30
-    rabbitmqctl wait --timeout 60000 /usr/var/lib/rabbitmq/mnesia/rabbit@$HOSTNAME.pid
+    rabbitmqctl wait --timeout 60000 /usr/var/lib/rabbitmq/mnesia/rabbitmq2@$HOSTNAME.pid
     echo "Stopping RabbitMQ application on node $HOSTNAME..."
     rabbitmqctl stop_app
     echo "Joining node $HOSTNAME to cluster $JOIN_CLUSTER_HOST..."
