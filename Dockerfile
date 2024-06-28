@@ -13,6 +13,9 @@ RUN set -eux; \
     apk add --no-cache python3; \
     rabbitmqadmin --version
 
+ENV JOIN_CLUSTER_HOST=rabbitmq-cluster1@railway
+ENV RABBITMQ_NODENAME=rabbitmq-cluster2
+
 RUN chmod 755 /usr/local/bin/cluster-entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/cluster-entrypoint.sh"]
